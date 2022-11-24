@@ -45,7 +45,7 @@ const no_repeats = arr_results.filter((valor, indice) => { //Elimina todos los v
 
 let cont  = 0;
 for(let i = 0; i< arr.length; i++){
-    num1 = arr[i];                   //Lista con valores de 1 a valor sumatoria. ejm [1,2,3,4]
+    num1 = arr[i];                   //Lista con valores de 1 a valor sumatoria. 
     num2 = no_repeats[i]             //Lista con posibles combinaciones
 
     if (num1 == num2){               //Si tiene valores iguales se suma 1 al contador
