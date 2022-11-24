@@ -4,18 +4,21 @@ function eliminate_S_number(list_input) {
     S = 6;                              
     
     for (let i = 0; i < list_input.length; i++) {
-        let num = list_input[i];                          //Número de la lista  
+        let num = list_input[i];                          //Números de la lista de entrada 
         
-        let num2arr = String(num).split("").map((num)=>{  //Convierte el número en una lista
+        let num2arr = String(num).split("").map((num)=>{  //Convierte cada número en una lista
             return Number(num);                  
         })
+
         arr2send = [];                                    
         for(let j = 0; j < num2arr.length; j++) {
             
             if (num2arr[j] < S){
+                
                 arr2send.push(num2arr[j]);                 //Lista que no tendra valores > S
             }            
         }
+
         if (arr2send.length>0){                           //Para que no hayan erroes por lista vacia
             array_out.push((parseInt(arr2send.join(''))));//Se envia a la variable de salida
         }else{}
@@ -39,18 +42,18 @@ function ordered_arr(array_in){
             for(let j = 0; j<array_in.length; j++){
                 cont --;
                 arr_ordered.push(array_in[cont]);
-                console.log(arr_ordered);
+
             }        
         }
         if(num0 < numn){      //Ordenado ascendente -> se ordena en descendente
             for(let j = 0; j<array_in.length; j++){
                 cont --;      //cont es igual a la longitud del array de entrada, va disminuyendo
                 arr_ordered.push(array_in[cont]);  //Agregando primero los ultimos valores.
-                console.log(arr_ordered);
+                
             }
         }
     }else{}
-
+    return arr_ordered;
 }
 
 // > [1, 2, 3, 4, 5, 6] -> [5, 4, 3, 2, 1]
@@ -62,14 +65,14 @@ function ordered_arr(array_in){
 // > [60, 6, 5, 4, 3, 2, 7, 7, 29, 1] -> [1, 2, 2, 3, 4, 5, 0]
 
 let list_input = [];
-list_input = [60, 6, 5, 4, 3, 2, 7, 7, 29, 1];
+list_input = [6, 2, 1];
 let n = list_input.length;
 
 
 if (n<=100){
     let a = eliminate_S_number(list_input);
     let b = ordered_arr(a);
-   
+    console.log(b)
 }else{
     throw new Error("The size of the list must be less or equal to 100");
     }

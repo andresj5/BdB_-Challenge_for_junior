@@ -1,10 +1,10 @@
 function pow_array(dict_input){
     let array_in = [];  
     let array_out = [];
-    S = 6;
+    S = 5;
     SS = parseInt(S.toString() + S.toString());
     
-    for(const [key, value] of Object.entries(dict_input)){
+    for(const [key, value] of Object.entries(dict_input)){       //Saca la lista del objecto
         for(let i = 0; i< value.length; i++){
             array_in.push(value[i]);
         }
@@ -12,7 +12,7 @@ function pow_array(dict_input){
 
     if (array_in.length>0){
         for (let i = 0; i < array_in.length; i++) {
-            let num = Math.pow(array_in[i],2);
+            let num = Math.pow(array_in[i],2);         //Se aplica potenciación a cada valor de la lista
             
             if(num < SS){
                 array_out.push(num);
@@ -27,7 +27,7 @@ function pow_array(dict_input){
     
 }
 
-function ordenarArray(list) {
+function orderedArray(list) {
     for (let j = 0; j < list.length - 1; j++) {
       let cont = 0;
         for (let i = 0; i < list.length - 1; i++) {
@@ -46,9 +46,9 @@ function ordenarArray(list) {
     // > {"array": [-6, -5, 0, 5, 6]} -> [0, 25, 25, 36, 36]
     // > {"array": [-10, 10]} -> []
 
-let dict_input = {"array": [1, 2, 3, 5, 6, 8, 9]};
+let dict_input = {"array": [-6, -5, 0, 5, 6]}
 
 let a = (pow_array(dict_input));
 console.log(a);
-console.log(ordenarArray(a));
+console.log(orderedArray(a));
 
